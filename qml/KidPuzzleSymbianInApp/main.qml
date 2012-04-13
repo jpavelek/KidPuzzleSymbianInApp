@@ -7,6 +7,7 @@ Rectangle {
     height: UI.screenHeight
     color: "black"
     property bool isMuted: settingsObj.getMuted();
+    property bool isFull:  settingsObj.isFullGame();
 
     Loader {
         id: tileLoader
@@ -33,5 +34,4 @@ Rectangle {
         id: applause
         source: "app-6.wav"; muted: isMuted; volume: 1.0
     }
-
 }

@@ -16,26 +16,16 @@ Image {
             height: UI.delegateHeigh
             source: thumbnail
             MouseArea {
-                anchors.fill: (boardEnabled) ? parent : undefined
+                anchors.fill: parent
                 onClicked: {
                     gridTiles.currentIndex = index
-                    tileLoader.source = tileComponent
+                    tileLoader.source = (isFull || boardEnabled) ? tileComponent : "BuyFullVersion.qml"
                 }
             }
-            Rectangle {
-                visible: !boardEnabled
-                anchors.fill: thumbnailImage
-                radius: 30
-                opacity: 0.5
-                color: "black"
-            }
-            Text {
-                visible: false //FULLVERSION (buyTile == undefined) ? false : true
-                text: qsTr("Upgrade for 2 EURO")
-                anchors { horizontalCenter: parent.horizontalCenter; verticalCenter: parent.verticalCenter }
-                font.pixelSize: 32
-                color: "black"
-                font.bold: true
+            Image {
+                visible: ((!boardEnabled)&&(!isFull))
+                anchors { left: parent.left; top: parent.top }
+                source: "locked_mask.png"
             }
         }
     }
@@ -55,42 +45,42 @@ Image {
         ListElement {
             tileComponent: "BoardFish.qml"
             thumbnail: "fish_thumbnail.png"
-            boardEnabled: true
+            boardEnabled: false
         }
         ListElement {
             tileComponent: "BoardPets.qml"
             thumbnail: "pets_thumbnail.png"
-            boardEnabled: true
+            boardEnabled: false
         }
         ListElement {
             tileComponent: "BoardAquarium2.qml"
             thumbnail: "aquarium2_thumbnail.png"
-            boardEnabled: true
+            boardEnabled: false
         }
         ListElement {
             tileComponent: "BoardKitten.qml"
             thumbnail: "kitten_thumbnail.png"
-            boardEnabled: true
+            boardEnabled: false
         }
         ListElement {
             tileComponent: "BoardAquarium.qml"
             thumbnail: "aquarium_thumbnail.png"
-            boardEnabled: true
+            boardEnabled: false
         }
         ListElement {
             tileComponent: "BoardPuppy.qml"
             thumbnail: "puppy_thumbnail.png"
-            boardEnabled: true
+            boardEnabled: false
         }
         ListElement {
             tileComponent: "BoardBBFish.qml"
             thumbnail: "bbfish_thumbnail.png"
-            boardEnabled: true
+            boardEnabled: false
         }
         ListElement {
             tileComponent: "BannerPleaseRate.qml"
             thumbnail: "butterfly_thumbnail.png"
-            boardEnabled: true
+            boardEnabled: false
         }
     }
 

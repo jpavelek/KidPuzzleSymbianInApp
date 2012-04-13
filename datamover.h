@@ -16,6 +16,8 @@ signals:
 public slots:
     bool wasReviewed(void);
     void setReviewed(void);
+    void setFullGame(void);
+    bool isFullGame(void);
     void setMuted(bool);
     bool getMuted(void);
 private:
