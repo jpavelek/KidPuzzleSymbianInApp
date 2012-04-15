@@ -21,33 +21,46 @@ DataMover::DataMover(QObject *parent) :
 }
 
 void
-DataMover::setReviewed() {
+DataMover::setReviewed()
+{
     settings->setValue(DM_REVIEWED_KEY, true);
 }
 
 bool
-DataMover::wasReviewed() {
+DataMover::wasReviewed()
+{
     return settings->value(DM_REVIEWED_KEY).toBool();
 }
 
 void
-DataMover::setFullGame() {
+DataMover::setFullGame()
+{
     settings->setValue(DM_FULLGAME_KEY, true);
 }
 
 bool
-DataMover::isFullGame() {
+DataMover::isFullGame()
+{
     return settings->value(DM_FULLGAME_KEY).toBool();
 }
 
 void
-DataMover::setMuted(bool m) {
+DataMover::setMuted(bool m)
+{
     settings->setValue(DM_MUTED_KEY, m);
 }
 
 bool
-DataMover::getMuted(void) {
+DataMover::getMuted(void)
+{
     return settings->value(DM_MUTED_KEY).toBool();
+}
+
+
+QString
+DataMover::getLocalPrice(void)
+{
+    return "$1.69"; //FIXME -  real code here pls
 }
 
 

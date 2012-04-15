@@ -20,6 +20,7 @@ public slots:
     bool isFullGame(void);
     void setMuted(bool);
     bool getMuted(void);
+    QString getLocalPrice(void);
 private:
     QSettings *settings;
 };

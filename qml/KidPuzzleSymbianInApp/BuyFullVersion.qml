@@ -1,4 +1,3 @@
-// import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import QtQuick 1.0
 import "UI.js" as UI
 
@@ -23,8 +22,8 @@ Rectangle {
     }
 
     Text {
-        text: "Buy full version?"
-        font.pixelSize: 42
+        text: qsTr("Buy full version for " + settingsObj.getLocalPrice());
+        font.pixelSize: 28
         font.bold: true
         color: "white"
         anchors { horizontalCenter: parent.horizontalCenter; top: boards.bottom }
